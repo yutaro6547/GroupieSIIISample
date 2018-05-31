@@ -13,7 +13,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    val binding: ActivityMainBinding by lazy {
+    private val binding: ActivityMainBinding by lazy {
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
     }
 
