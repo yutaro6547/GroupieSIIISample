@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
             groupAdapter.add(this)
         }
 
+//        Section(HeaderItem("Fucking Guys!!")).apply {
+//            add(makeCarouselItem())
+//        }
+
         binding.recyclerView.apply {
             layoutManager = GridLayoutManager(context, groupAdapter.spanCount).apply {
                 spanSizeLookup = groupAdapter.spanSizeLookup
@@ -46,4 +50,13 @@ class MainActivity : AppCompatActivity() {
             CardItem(this, color, "test", spanSizeCount)
         }
     }
+
+//    private fun makeCarouselItem(): CarouselItem {
+//        val carouselDecoration = CarouselItemDecoration(gray, betweenPadding)
+//        val carouselAdapter = GroupAdapter<ViewHolder>()
+//        for (i in 0..29) {
+//            carouselAdapter.add(generateCards(i, 4))
+//        }
+//        return CarouselItem(carouselDecoration, carouselAdapter)
+//    }
 }
