@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.GridLayoutManager
 import com.example.zukkey.groupiesiiisample.databinding.ActivityMainBinding
 import com.xwray.groupie.GroupAdapter
@@ -30,9 +31,10 @@ class MainActivity : AppCompatActivity() {
             groupAdapter.add(this)
         }
 
-//        Section(HeaderItem("Fucking Guys!!")).apply {
-//            add(makeCarouselItem())
-//        }
+        Section(HeaderItem("Fucking Guys!!")).apply {
+            add(ColumnGroup(cardItem))
+            groupAdapter.add(this)
+        }
 
         binding.recyclerView.apply {
             layoutManager = GridLayoutManager(context, groupAdapter.spanCount).apply {
@@ -51,12 +53,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    private fun makeCarouselItem(): CarouselItem {
+//    private fun makeCarouselItem(carouselAdapter: GroupAdapter<ViewHolder>): CarouselGroup {
+//        val gray = ContextCompat.getColor(this, R.color.material_grey_600)
+//        val betweenPadding: Int = resources.getDimensionPixelSize(R.dimen.design_bottom_navigation_elevation)
 //        val carouselDecoration = CarouselItemDecoration(gray, betweenPadding)
-//        val carouselAdapter = GroupAdapter<ViewHolder>()
-//        for (i in 0..29) {
-//            carouselAdapter.add(generateCards(i, 4))
+//        for (i in 0..9) {
+//            carouselAdapter.add(CarouselItem(carouselDecoration, carouselAdapter))
 //        }
-//        return CarouselItem(carouselDecoration, carouselAdapter)
+//        return CarouselGroup(carouselDecoration, carouselAdapter)
 //    }
 }
