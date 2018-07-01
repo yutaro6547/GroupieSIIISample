@@ -2,6 +2,7 @@ package com.example.zukkey.groupiesiiisample
 
 import android.content.Context
 import android.support.annotation.ColorInt
+import android.support.v4.content.ContextCompat
 import android.widget.Toast
 import com.example.zukkey.groupiesiiisample.databinding.ItemCardBinding
 import com.xwray.groupie.databinding.BindableItem
@@ -21,8 +22,8 @@ class CardItem(
         viewBinding.itemCardTitle.text = cardText
         viewBinding.itemCard.setCardBackgroundColor(color)
         viewBinding.itemCardButton.setOnClickListener {
-            // TODO: Button押したときになんか書く
-            Toast.makeText(context, "Button Clicked Hahaha!!", Toast.LENGTH_SHORT).show()
+            viewBinding.itemCardTitle.text = "Fuck"
+            viewBinding.itemCard.setCardBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary))
         }
     }
 
